@@ -6,28 +6,55 @@
     <title>MathLive Four Operation Calculator</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./styleKey.css" />
 </head>
 
 <body>
     <main>
         Press the Virtual Keyboard for virtual key board
         <div class="mathfield" id="mf"></div>
+        <div id="latex"></div>
+        <div id="mathjson"></div>
         
     </main>
     <script type="module">
         import MathLive from 'https://unpkg.com/mathlive/dist/mathlive.mjs';
             // import MathLive from '/src/mathlive.js';
-            (function () {
-                const mf = MathLive.makeMathField('mf', {
+            const mf = MathLive.makeMathField('mf', {
                 smartMode: true,
                 virtualKeyboardMode: 'manual',
                 onContentDidChange: (mf) => {
                     const latex = mf.$text();
-                    document.getElementById('latex').value = latex;
+                    document.getElementById('latex').innerHTML = escapeHtml(
+                        latex
+                    );
+
+                    const mathJSON = MathLive.latexToAST(latex);
+                    document.getElementById('mathjson').innerHTML = escapeHtml(
+                        JSON.stringify(mathJSON)
+                    );
                 },
             });
-            })();
+
+            function escapeHtml(string) {
+                return String(string).replace(/[&<>"'`=/\u200b]/g, function (
+                    s
+                ) {
+                    return (
+                        {
+                            '&': '&amp;',
+                            '<': '&lt;',
+                            '>': '&gt;',
+                            '"': '&quot;',
+                            "'": '&#39;',
+                            '/': '&#x2F;',
+                            '`': '&#x60;',
+                            '=': '&#x3D;',
+                            '\u200b': '&amp;#zws;',
+                        }[s] || s
+                    );
+                });
+            }
         </script>
 </body>
 

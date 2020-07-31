@@ -194,6 +194,10 @@ footer a:active {
     padding-bottom: 6px;
 }
 
+#latex, #mathjson{
+    display: none;
+}
+
 @media only screen and (max-width: 512px) {
     header {
         height: 100px;

@@ -1,9 +1,10 @@
-#Description
+# Description
 
-**using MathLive editor**
+**Using MathLive editor**
 
 ### index.html
 simple editor without virtual keyboard
 
-## indexKey.html
+### indexKey.html
 editor with virtual keyboard
+
