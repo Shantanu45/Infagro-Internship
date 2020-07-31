@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MathLive Four Operation Calculator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+    <main>
+        Press the Virtual Keyboard for virtual key board
+        <div class="mathfield" id="mf"></div>
+        
+    </main>
+    <script type="module">
+        import MathLive from 'https://unpkg.com/mathlive/dist/mathlive.mjs';
+            // import MathLive from '/src/mathlive.js';
+            (function () {
+                const mf = MathLive.makeMathField('mf', {
+                smartMode: true,
+                virtualKeyboardMode: 'manual',
+                onContentDidChange: (mf) => {
+                    const latex = mf.$text();
+                    document.getElementById('latex').value = latex;
+                },
+            });
+            })();
+        </script>
+</body>
+
+</html>
