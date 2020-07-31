@@ -1,1 +1,1 @@
-# Infagro-Internship
+# Infagro
