@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Full Editor</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="language" content="english">
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="description"
+    content="Quill is a free, open source WYSIWYG editor built for the modern web. Completely customize it for any need with its modular architecture and expressive API.">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@quilljs">
+
+  <meta name="twitter:title" content="Full Editor - Quill">
+
+  <meta name="twitter:description" content="Quill is a free, open source rich text editor built for the modern web.">
+  <meta name="twitter:image" content="https://quilljs.com/assets/images/brand-asset.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quilljs.com/standalone/full/">
+  <meta property="og:image" content="https://quilljs.com/assets/images/brand-asset.png">
+  <meta property="og:title" content="Full Editor - Quill">
+  <meta property="og:site_name" content="Quill">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+  <link rel="canonical" href="https://quilljs.com/standalone/full/">
+  <link type="application/atom+xml" rel="alternate" href="https://quilljs.com/feed.xml"
+    title="Quill - Your powerful rich text editor" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./style.css"/>
+
+
+</head>
+
+<body>
+  <div id="form-container" class="container">
+    <form>
+      <div class="row">
+
+        <div class="row form-group">
+          <div id="standalone-container">
+            <label for="content">Editor</label>
+            <input name="content" type="hidden">
+            <div id="toolbar-container">
+              <span class="ql-formats">
+                <select class="ql-font" title="Select Font"></select>
+                <select class="ql-size" title="Font Size"></select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-bold" title="Bold"></button>
+                <button class="ql-italic" title="Italic"></button>
+                <button class="ql-underline" title="Underline"></button>
+                <button class="ql-strike" title="Strike"></button>
+              </span>
+              <span class="ql-formats">
+                <select class="ql-color" title="Font Color"></select>
+                <select class="ql-background" title="Highlight Text"></select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-script" value="sub" title="Subscript"></button>
+                <button class="ql-script" value="super" title="Superscript"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-header" value="1" title="Heading 1"></button>
+                <button class="ql-header" value="2" title="Heading 2"></button>
+                <button class="ql-blockquote" title="Blockquote"></button>
+                <button class="ql-code-block" title="Code Block"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-list" value="ordered" title="Ordered List"></button>
+                <button class="ql-list" value="bullet" title="Bullet List"></button>
+                <button class="ql-indent" value="-1" title="Indent Left"></button>
+                <button class="ql-indent" value="+1" title="Indent Right"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-direction" value="rtl"></button>
+                <select class="ql-align" title="Align"></select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-link" title="Insert link"></button>
+                <button class="ql-image" title="Insert Image"></button>
+                <button class="ql-video" title="Insert Video"></button>
+                <button class="ql-formula" title="Insert Formula"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-clean" title="Clear All Formats"></button>
+              </span>
+            </div>
+            
+            <div id="editor-container"></div>
+            <div id="katex-link">for Formulas use <a href="https://katex.org/docs/supported.html"> KaTex </a></div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary" type="submit">Save</button>
+          </div>
+        </div>
+    </form>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script src="main.js">
+    
+  </script>
+
+
+</body>
+
+</html>
