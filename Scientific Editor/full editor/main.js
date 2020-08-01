@@ -3,7 +3,7 @@ var quill = new Quill('#editor-container', {
       syntax: true,
       toolbar: '#toolbar-container'
     },
-    placeholder: 'Write Here...',
+    placeholder: 'Write Here... ',
     theme: 'snow'
   });
   
