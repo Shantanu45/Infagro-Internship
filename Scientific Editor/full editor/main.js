@@ -19,8 +19,8 @@ var quill = new Quill('#editor-container', {
     //   { insert: 'World!', attributes: { bold: true } },
     //   { insert: '\n' }
     // ]);
-
-    // setTimeout(function(){ quill.setContents(quill.setContents(DeltaContent)); }, 3000)
+ 
+    // setTimeout(function(){ quill.setContents(DeltaContent); }, 3000)
     
     // console.log("Submitted", $(form).serialize(), $(form).serializeArray(), 
     // quill.setContents(quill.getContents()));
