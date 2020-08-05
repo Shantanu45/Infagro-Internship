@@ -3,8 +3,14 @@ body>#standalone-container {
     max-width: 720px;
   }
 
+  #toolbar-container{
+    display: none;
+  }
+
   #editor-container {
-    height: 350px;
+    border: solid 1px grey;
+    height: 100px;
+    width: 500px;
   }
 
   #form-container {
