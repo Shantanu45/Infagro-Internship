@@ -1,16 +1,6 @@
-body>#standalone-container {
+body>.standalone-container {
     margin: 50px auto;
     max-width: 720px;
-  }
-
-  #toolbar-container{
-    display: none;
-  }
-
-  #editor-container {
-    border: solid 1px grey;
-    height: 100px;
-    width: 500px;
   }
 
   #form-container {
