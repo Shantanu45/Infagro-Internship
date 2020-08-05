@@ -5,7 +5,7 @@ let editor = ""
 let allEditor = ""
 
 function createEditor(count) {
-    editor = `<div class="row">
+  editor = `<div class="row">
 
 <div class="row form-group">
   <div class="standalone-container">
@@ -72,18 +72,19 @@ function createEditor(count) {
 </div>
 
 </div>
-<button class="btn btn-primary" type="submit">Save</button>`
-    allEditor += editor;
+`
+  allEditor += editor;
 }
 
 let form1 = document.querySelector('form')
 let AddBtn = document.getElementById('add')
 
 AddBtn.addEventListener('click', () => {
-    createEditor(count)
-    form1.innerHTML = allEditor
-    for(let i = 0; i <= count; i++){
+  createEditor(count)
+  editorWButton = allEditor + `<button class="btn btn-primary" type="submit">Save</button>`
+  form1.innerHTML = editorWButton
+  for (let i = 0; i <= count; i++) {
     addQuill(i)
-    }
-    count++
+  }
+  count++
 }) 
