@@ -4,13 +4,20 @@ let editor = ""
 
 let allEditor = ""
 
+let form1 = document.querySelector('form')
+let AddBtn = document.getElementById('add')
+var content = document.querySelector('input[name=content]');
+let fields = []
+let contentObj = {}
+
+
 function createEditor(count) {
   editor = `<div class="row">
 
 <div class="row form-group">
   <div class="standalone-container">
     <label for="content">Editor</label>
-    <input name="content" type="hidden">
+    <input name="content${count}" type="hidden">
     <div class="toolbar-container${count}" 
     style="
     display: none;
@@ -76,15 +83,33 @@ function createEditor(count) {
   allEditor += editor;
 }
 
-let form1 = document.querySelector('form')
-let AddBtn = document.getElementById('add')
 
 AddBtn.addEventListener('click', () => {
   createEditor(count)
   editorWButton = allEditor + `<button class="btn btn-primary" type="submit">Save</button>`
   form1.innerHTML = editorWButton
+  
   for (let i = 0; i <= count; i++) {
-    addQuill(i)
+    if(i == 0){
+      fields = []
+    }
+    fields.push(addQuill(i))
   }
+  
   count++
 }) 
+
+
+form1.onsubmit = function (e){
+  e.preventDefault();
+  for(let i = 0; i < count; i++){
+    document.querySelector(`input[name=content${i}]`).value += JSON.stringify(fields[i].getContents());
+    
+  }
+  contentObj = {
+    Section: 1,
+    Question: 1,
+    Content: $(form1).serializeArray()
+  };
+  console.log(contentObj)
+}

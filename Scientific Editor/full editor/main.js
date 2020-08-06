@@ -1,3 +1,5 @@
+
+
 function addQuill(count) {
   var quill = new Quill(`.editor-container${count}`, {
     modules: {
@@ -9,17 +11,19 @@ function addQuill(count) {
   });
 
 
-  var form = document.querySelector('form');
-  form.onsubmit = function () {
-    // Populate hidden form on submit
-    var content = document.querySelector('input[name=content]');
-    content.value = JSON.stringify(quill.getContents());
-    var DeltaContent = quill.getContents();
-    console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-    alert('Open the console to see the submit data!')
+  // console.log(fields)
+  // var form = document.querySelector('form');
+  // form.onsubmit = function () {
+  //   // Populate hidden form on submit
+  //   var content = document.querySelector('input[name=content]');
+  //   content.value = JSON.stringify(quill.getContents());
+  //   // var DeltaContent = quill.getContents();
+  //   console.log(content.value)
+  //   console.log("Submitted", $(form).serialize(), $(form).serializeArray());
+  //   alert('Open the console to see the submit data!')
 
-    return false;
-  };
+  //   return false;
+  // };
 
   const toolbar = document.querySelector(`.toolbar-container${count}`);
   const Editor = document.querySelector(`.editor-container${count}`)
@@ -34,12 +38,12 @@ function addQuill(count) {
         return;
       }
       targetElement = targetElement.parentNode;
-      console.log(targetElement)
     } while (targetElement);
 
     // This is a click outside.
     toolbar.style.display = 'none'
   });
+  return quill
 
 }
 
